@@ -17,7 +17,8 @@ function Header() {
         <hr/>
         <a href="#">SINCRONIZAR CELULAR</a>
         <hr/>
-        <img src={notification} alt="notification"></img>
+        <a href="#"><img src={notification} alt="notification"></img></a>
+
       </F.RightSide>
     </F.Container>
   )

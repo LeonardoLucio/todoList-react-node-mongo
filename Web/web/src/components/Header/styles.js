@@ -15,7 +15,7 @@ export const LeftSide = styled.div`
     img {
         width: 170px;
         height: 55px;
-        padding-left: 5px;
+        padding-left: 10px;
     }
     display: flex;
     align-items: center;
@@ -24,23 +24,33 @@ export const LeftSide = styled.div`
 export const RightSide = styled.div`
     width: 50%;
     height: 70px;
-    
-    a{
-        text-decoration: none;
-        color: white;
-    }
-    img {
-    width: 40px;   
-
-     }
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-right: 10px;
+    padding-left: 320px;
 
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+        &:hover{
+            color:#2C2F30;
+        }
+    }
+
+    img {
+    width: 40px;   
+    &:hover{
+        opacity: 0.5;
+    }
+     }
     
     hr{
-        height: 80%; 
+        height:50%; 
         display: flex;
-
+        margin: 8px, 8px;
+        opacity: 0.5;
     }
 `
