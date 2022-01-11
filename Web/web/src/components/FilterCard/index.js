@@ -3,10 +3,11 @@ import * as F from './styles'
 
 import filter from '../../assets/filter.png'
 
-function FilterCard() {
+function FilterCard({ title }) {
   return (
       <F.Container>
         <img src={filter} alt="filtro"></img>
+        <span>{title}</span>
       </F.Container>
   )
 }

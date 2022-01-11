@@ -10,8 +10,14 @@ function Home() {
   <F.Container>
   <Header/>
 
-  <FilterCard/>
-  
+  <F.FilterArea>
+    <FilterCard title="Todos"/>
+    <FilterCard title="Hoje"/>
+    <FilterCard title="Semana"/>
+    <FilterCard title="Mes"/>
+    <FilterCard title="Ano"/>
+  </F.FilterArea>
+
   <Footer/>
   </F.Container>
     )

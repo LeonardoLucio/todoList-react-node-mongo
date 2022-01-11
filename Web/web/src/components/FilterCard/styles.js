@@ -1,16 +1,27 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-width: 300px;
-height: 100px;
-display: flex;
-background: black;
-
+width: 260px;
+height: 60px;
+background: red;
 border-radius: 8px;
-
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
     img{
-        width: 10px;
-        height: 10px;
+        width: 20px;
+        height: 20px;
         
+    }
+
+    span{
+        color:white;
+        font-weight: bold;
+        align-self: end;
+    }
+
+    &:hover{
+        background: #2C2F30;
     }
 `
