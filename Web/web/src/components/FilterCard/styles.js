@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-width: 260px;
+width: 230px;
 height: 60px;
-background: red;
+background: ${props => props.actived ? '#2C2F30' : 'red'};
+cursor: pointer;
 border-radius: 8px;
 padding: 10px;
 display: flex;
