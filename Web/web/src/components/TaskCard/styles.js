@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    width: 260px;
+    width: 240px;
     height: 190px;
    
     display: flex;
@@ -11,6 +11,11 @@ export const Container = styled.div`
     flex-direction: column;
     box-shadow: -3px 1px 13px -2px rgba(0,0,0,0.73);
     border-radius: 10px;
+    margin: 10px;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
 `
 export const TopCard = styled.div`
     display: flex;
