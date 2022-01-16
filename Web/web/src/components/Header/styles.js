@@ -39,13 +39,25 @@ export const RightSide = styled.div`
             color:#2C2F30;
         }
     }
+    #notification {
+     img {
+     width: 25px;   
 
-    img {
-    width: 40px;   
+     }
+     span {
+         font-size: 12px;
+        background: #fff;
+        color: red;
+        border-radius: 50%;
+        padding: 0.5px 4.5px;
+        position: relative;
+        top: -18px;
+        right: 11px;
+    }
     &:hover{
         opacity: 0.5;
     }
-     }
+    }
     
     hr{
         height:50%; 

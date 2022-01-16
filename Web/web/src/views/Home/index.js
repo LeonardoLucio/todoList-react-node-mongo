@@ -11,22 +11,29 @@ import TaskCard from '../../components/TaskCard'
 function Home() {
   const [filterActived, setFilterActived] = useState('all');
   const [task, setTasks] = useState([])
-
+  const [lateCount, setLateCount] = useState();
   async function loadTasks(){
     await api.get(`/task/filter/${filterActived}/11:11:11:11:11:11`)
     .then(response =>{
       setTasks(response.data)
     })
   }
-
+  async function lateVerify(){
+    await api.get(`/task/filter/late/11:11:11:11:11:11`)
+    .then(response =>{
+      setLateCount(response.data.length)
+    })
+  }
   useEffect(() => {
-    loadTasks()
+    loadTasks();
+    lateVerify();
+
   }, [filterActived])
 
   return (
   <F.Container>
 
-  <Header/>
+  <Header lateCount={lateCount}/>
 
   <F.FilterArea>
     <button type="button" onClick={()=> setFilterActived("all")}>
@@ -54,7 +61,7 @@ function Home() {
   { 
     task.map(t => (
 
-      <TaskCard type={t.type} title={t.title} when />
+      <TaskCard type={t.type} title={t.title} when={t.when} />
     ))
    
     }

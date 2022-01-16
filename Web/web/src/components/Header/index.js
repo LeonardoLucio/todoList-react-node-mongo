@@ -4,7 +4,7 @@ import * as F from './styles'
 import logo from '../../assets/logo.png'
 import notification from '../../assets/notification.png'
 
-function Header() {
+function Header({lateCount}) {
   return (
     <F.Container>
       <F.LeftSide>
@@ -12,13 +12,15 @@ function Header() {
         <img src={logo} alt="logo"></img>
       </F.LeftSide>
       <F.RightSide>
-        <a href="#">INÍCIO</a>
+        <a href="/">INÍCIO</a>
         <hr/>
-        <a href="#">NOVA TAREFA</a>
+        <a href="/task">NOVA TAREFA</a>
         <hr/>
-        <a href="#">SINCRONIZAR CELULAR</a>
+        <a href="/QrCode">SINCRONIZAR CELULAR</a>
         <hr/>
-        <a href="#"><img src={notification} alt="notification"></img></a>
+        <a href="#" id="notification"><img src={notification} alt="notification"></img>
+        <span>{lateCount}</span>
+        </a>
 
       </F.RightSide>
     </F.Container>
