@@ -40,6 +40,9 @@ export const RightSide = styled.div`
         }
     }
     #notification {
+    border: none;
+    background: none;
+    cursor: pointer;
      img {
      width: 25px;   
 

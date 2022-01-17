@@ -4,7 +4,7 @@ import * as F from './styles'
 import logo from '../../assets/logo.png'
 import notification from '../../assets/notification.png'
 
-function Header({lateCount}) {
+function Header({lateCount, clickNotification}) {
   return (
     <F.Container>
       <F.LeftSide>
@@ -18,9 +18,9 @@ function Header({lateCount}) {
         <hr/>
         <a href="/QrCode">SINCRONIZAR CELULAR</a>
         <hr/>
-        <a href="#" id="notification"><img src={notification} alt="notification"></img>
+        <button id="notification"><img src={notification} alt="notification" onClick={clickNotification}></img>
         <span>{lateCount}</span>
-        </a>
+        </button>
 
       </F.RightSide>
     </F.Container>

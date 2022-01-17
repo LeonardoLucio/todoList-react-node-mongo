@@ -24,6 +24,10 @@ function Home() {
       setLateCount(response.data.length)
     })
   }
+
+  function Notification() {
+    setFilterActived('late')
+  }
   useEffect(() => {
     loadTasks();
     lateVerify();
@@ -33,7 +37,7 @@ function Home() {
   return (
   <F.Container>
 
-  <Header lateCount={lateCount}/>
+  <Header lateCount={lateCount} clickNotification={Notification}/>
 
   <F.FilterArea>
     <button type="button" onClick={()=> setFilterActived("all")}>
@@ -54,7 +58,7 @@ function Home() {
   </F.FilterArea>
  
   <F.Title>
-    <h3>TAREFAS</h3>
+    <h3>{filterActived === 'late' ? 'TAREFAS ATRASADAS' : 'TAREFAS'}</h3>
   </F.Title>
   <F.Content>
   
