@@ -107,7 +107,11 @@ export const SaveTask = styled.div`
        border: none;
        color: white;   
         font-weight: bold;
+        cursor: pointer;
 
+        &:hover{
+            opacity: 0.7;
+        }
     }
 
 `

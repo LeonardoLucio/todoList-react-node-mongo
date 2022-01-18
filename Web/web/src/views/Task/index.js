@@ -15,7 +15,7 @@ function Task() {
   const [description, setDescription] = useState();
   const [date, setDate] = useState();
   const [hour, setHour] = useState();
-  const [macaddress, setMacadress] = useState();
+  const [macaddress, setMacaddress] = useState('11:11:11:11:11:11');
 
   
   async function lateVerify(){
@@ -24,6 +24,18 @@ function Task() {
       setLateCount(response.data.length)
     })
   }
+  async function save(){
+    await api.post(`/task`, {
+      macaddress,
+      title,
+      description,
+      when: `${date}T${hour}:00.000`
+
+    }).then(() => alert('TAREFA CADASTRADA COM SUCESSO!')
+    )
+  
+  }
+ 
   useEffect(() => {
     
     lateVerify();
@@ -41,27 +53,29 @@ function Task() {
       <F.Content>
           <F.Input>
             <span>Titulo</span>
-            <input type="text" placeholder='Titulo da tarefa'></input>
+            <input type="text" placeholder='Titulo da tarefa...' 
+              onChange={e => setTitle(e.target.value)} value={title}/>
           </F.Input>
           <F.TextArea>
           <span>Descrição</span>
-            <textarea></textarea>
+            <textarea placeholder='Descrição da tarefa...' 
+             onChange={e => setDescription(e.target.value)} value={description}></textarea>
           </F.TextArea>
           <F.Input>
             <span>Data</span>
-            <input type="date" placeholder='Titulo da tarefa'></input>
+            <input type="date" onChange={e => setDate(e.target.value)} value={date}/>
           </F.Input>
           <F.Input>
             <span>Hora</span>
-            <input type="time" placeholder='Titulo da tarefa'></input>
+            <input type="time" onChange={e => setHour(e.target.value)} value={hour}/>
           </F.Input>
           <F.CheckBox>
-            <input type="checkbox"/>
+            <input type="checkbox" checked={done} onChange={() => setDone(!done)}/>
             <span>CONCLUIDO</span>
             <button type="button">EXCLUIR</button>
           </F.CheckBox>
           <F.SaveTask>
-          <button type="button">SALVAR</button>
+          <button type="button" onClick={save}>SALVAR</button>
           </F.SaveTask>
       </F.Content>
   </F.Form>
