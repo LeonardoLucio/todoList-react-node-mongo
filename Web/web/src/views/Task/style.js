@@ -23,7 +23,7 @@ export const Content = styled.div`
     width: 500px;
     height: 450px;
     margin-top: 20px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 
 `
 
@@ -51,10 +51,17 @@ export const Type = styled.div`
 export const Input = styled.div`
     width: 100%;
     margin-bottom: 20px;
+
    input {
         width: 100%;
         border: none;
         border-bottom: 1px solid red;
+        margin-top: 10px;
+        
+    }
+    span{
+        color: #707070;
+        font-weight: bold;
         
     }
 `

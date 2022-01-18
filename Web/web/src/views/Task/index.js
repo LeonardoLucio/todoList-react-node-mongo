@@ -9,6 +9,14 @@ import iconFilter from '../../assets/healthicons_default.png'
 
 function Task() {
   const [lateCount, setLateCount] = useState();
+  const [id, setId] = useState();
+  const [done, setDone] = useState(false);
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [date, setDate] = useState();
+  const [hour, setHour] = useState();
+  const [macaddress, setMacadress] = useState();
+
   
   async function lateVerify(){
     await api.get(`/task/filter/late/11:11:11:11:11:11`)
