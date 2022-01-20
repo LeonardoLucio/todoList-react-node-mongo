@@ -1,22 +1,23 @@
 import React from 'react'
 import * as F from './styles'
-
+import {Link} from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import notification from '../../assets/notification.png'
 
 function Header({lateCount, clickNotification}) {
   return (
     <F.Container>
+      
       <F.LeftSide>
     
         <img src={logo} alt="logo"></img>
       </F.LeftSide>
       <F.RightSide>
-        <a href="/">INÍCIO</a>
+        <Link to="/">INÍCIO</Link >
         <hr/>
-        <a href="/task">NOVA TAREFA</a>
+        <Link to="/task">NOVA TAREFA</Link>
         <hr/>
-        <a href="/QrCode">SINCRONIZAR CELULAR</a>
+        <Link to="/QrCode">SINCRONIZAR CELULAR</Link>
         <hr/>
         <button id="notification"><img src={notification} alt="notification" onClick={clickNotification}></img>
         <span>{lateCount}</span>

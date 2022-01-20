@@ -1,6 +1,6 @@
 import {React, useState, useEffect }from 'react'
 import * as F from './style'
-
+import { useParams } from 'react-router-dom';
 import api from '../../services/api'
 
 import Header from '../../components/Header';
@@ -8,6 +8,7 @@ import Footer from '../../components/Footer';
 import iconFilter from '../../assets/healthicons_default.png'
 
 function Task() {
+  const params = useParams();
   const [lateCount, setLateCount] = useState();
   const [id, setId] = useState();
   const [done, setDone] = useState(false);
@@ -24,6 +25,18 @@ function Task() {
       setLateCount(response.data.length)
     })
   }
+
+  async function LoadTaskDetails() {
+    await api.get(`/task/${params.id}`)
+    .then(response => {
+      setTitle(response.data.title)
+      setDescription(response.data.description)
+      setDate(new Date(response.data.when))
+      setHour(new Date(response.data.when))
+    })
+  }
+
+
   async function save(){
     await api.post(`/task`, {
       macaddress,
@@ -39,7 +52,7 @@ function Task() {
   useEffect(() => {
     
     lateVerify();
-
+    LoadTaskDetails()
   }, [])
 
   return (

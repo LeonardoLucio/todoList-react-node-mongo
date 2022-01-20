@@ -23,6 +23,12 @@ export const Content = styled.div`
     margin-top: 65px;
     flex-wrap: wrap;
     margin: 5px;
+
+    a{
+        text-decoration:none;
+        color: black;
+
+    }
 `
 
 

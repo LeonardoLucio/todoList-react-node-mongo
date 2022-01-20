@@ -22,7 +22,7 @@ export const Content = styled.div`
     flex-direction: column;
     width: 500px;
     height: 450px;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 50px;
 
 `
@@ -114,4 +114,20 @@ export const SaveTask = styled.div`
         }
     }
 
+`
+
+export const Title = styled.div`
+    width: 100%;
+    border-bottom: 1px solid red;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 30px;
+
+    h3{
+        color: red;
+        position: relative;
+        top: 30px;
+        background: #fff;
+        padding: 0 10px;
+    }
 `

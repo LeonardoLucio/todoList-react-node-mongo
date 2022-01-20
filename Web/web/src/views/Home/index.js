@@ -1,6 +1,6 @@
 import {React, useState, useEffect }from 'react'
 import * as F from './style'
-
+import {Link} from 'react-router-dom';
 import api from '../../services/api'
 
 import Header from '../../components/Header';
@@ -9,6 +9,7 @@ import FilterCard from '../../components/FilterCard';
 import TaskCard from '../../components/TaskCard'
 
 function Home() {
+
   const [filterActived, setFilterActived] = useState('all');
   const [task, setTasks] = useState([])
   const [lateCount, setLateCount] = useState();
@@ -64,8 +65,9 @@ function Home() {
   
   { 
     task.map(t => (
-
+      <Link to={`/task/${t._id}`}>
       <TaskCard type={t.type} title={t.title} when={t.when} />
+      </Link>
     ))
    
     }
